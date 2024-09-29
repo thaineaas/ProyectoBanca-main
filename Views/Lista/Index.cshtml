@@ -1,0 +1,28 @@
+@model IEnumerable<ProyectoBanca.Models.Cuentas>
+@{
+    ViewData["Title"] = "Cuentas Bancarias";
+}
+
+<h1 style="text-align: center;">@ViewData["Title"]</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre Titular</th>
+      <th scope="col">Email</th>
+      <th scope="col">Saldo Inicial</th>
+      <th scope="col">Tipo de Cuenta</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>$@Html.DisplayFor(modelItem => item.SaldoInicial)</td>
+                <td>@Html.DisplayFor(modelItem => item.Tipo)</td>
+            </tr>
+    }
+  </tbody>
+</table>

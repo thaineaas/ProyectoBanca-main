@@ -1,0 +1,38 @@
+@model ProyectoBanca.Models.Cuentas
+
+<h2 style="text-align: center;">REGISTRO DE CUENTAS BANCARIAS</h2>
+<div class="container-fluid" style="width: 50%;">
+
+    @using (Html.BeginForm("RegistrarCuenta", "Cuentas", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre)
+            @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email)
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SaldoInicial)
+            @Html.TextBoxFor(model => model.SaldoInicial, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SaldoInicial)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tipo)
+            @Html.TextBoxFor(model => model.Tipo, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Tipo)
+        </div>
+        <div style="text-align: center;">
+            <button type="submit" class="btn btn-primary" style="margin-top: 30px;">Registrar Cuenta</button>
+        </div>
+        
+    }
+</div>
+
+ <h1 style="text-align: center; margin-top: 50px;">@ViewData["Message"]</h1>
